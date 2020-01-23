@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="jtcm-app\**" />
+    <Content Remove="jtcm-app\**" />
+    <EmbeddedResource Remove="jtcm-app\**" />
+    <None Remove="jtcm-app\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\ts\Jtcm.ts" />
+    <Content Remove="wwwroot\ts\main.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
+    <PackageReference Include="OdeToCode.UseNodeModules" Version="1.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JTCM.DAL.Interfaces\JTCM.DAL.Interfaces.csproj" />
+    <ProjectReference Include="..\JTCM.DAL\JTCM.DAL.csproj" />
+    <ProjectReference Include="..\JTCM.Logging\JTCM.Logging.csproj" />
+    <ProjectReference Include="..\JTCM.Model\JTCM.Model.csproj" />
+    <ProjectReference Include="..\JTCM.Services\JTCM.Services.csproj" />
+    <ProjectReference Include="..\JTMC.Services.Interfaces\JTCM.Services.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ts\Jtcm.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\main.ts" />
+  </ItemGroup>
+
+</Project>
